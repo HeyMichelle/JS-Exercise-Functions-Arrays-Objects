@@ -14,6 +14,7 @@ function exampleFunction(num1, num2) {
   return num1 + num2;
 }
 
+exampleFunction(5,3);
 // ⭐️ Example Challenge end ⭐️
 
 
@@ -37,9 +38,27 @@ function exampleFunction(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
-}
+function makePersonObject(id, name, email) {
+  return {
+    id: id,
+    name: name,
+    email: email,
+  };
+};
+
+makePersonObject(5, "Leia", "leia@leia.com");
+
+
+/* Is this correct? 
+function makePersonObject(id, name, email) {
+    id: 5,
+    name: 'Leia',
+    email: 'leia@leia.com',
+  };
+
+makePersonObject(); 
+*/
+
 
 /**
  * ### Challenge `getName`
@@ -55,7 +74,7 @@ function makePersonObject(/* code here */) {
  * the returned value should look like `Hello, my name is Leia`.
 */
 function getName(/* code here */) {
-  /* code here */
+  return("Hello, my name is {name}");
 }
 
 /**
