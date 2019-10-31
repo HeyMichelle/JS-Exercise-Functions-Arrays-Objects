@@ -46,7 +46,7 @@ function makePersonObject(id, name, email) {
   };
 };
 
-makePersonObject(5, "Leia", "leia@leia.com");
+// makePersonObject(5, "Leia", "leia@leia.com");
 
 
 /* Is this correct? 
@@ -73,8 +73,10 @@ makePersonObject();
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  return("Hello, my name is {name}");
+function getName(name) {
+  // console.log(name);
+  // return('Hello, my name is ' + name.name)
+  return `Hello, my name is ${name.name}`
 }
 
 /**
@@ -90,8 +92,17 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(name) {
+  return {
+    name: name,
+    sum: function(a,b) {
+      return a+b
+    },
+    // how to include a function as a property
+    speak: function() {
+      return('Hello, my name is ' + name)
+    },
+  }
 }
 
 /**
