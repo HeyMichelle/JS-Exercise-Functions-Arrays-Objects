@@ -37,9 +37,15 @@ function exampleFunction(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+   return {
+    id: id,
+    name: name,
+    email: email,
+   }
 }
+
+makePersonObject(5, 'Leia', 'Leia@leia.com');
 
 /**
  * ### Challenge `getName`
@@ -118,8 +124,13 @@ function getLastCarInfo(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(arr, id) {
+  for (let i = 0; i<arr.length; i++) {
+      if (arr[i].id === id) {
+          let car = arr[i];
+          return `This is a ${car.car_make} ${car.car_model}`
+      }
+   }
 }
 
 /**
@@ -174,8 +185,15 @@ function getOlderCars(/* code here */) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
+function getGermanCars(data) {
+  let germanCars = []
+
+  for (let i=0; i < data.length; i++) {
+    if (data[i].car_make == "Audi" || data[i].car_make == "Mercedes-Benz" || data[i].car_make == "Volkswagen" || data[i].car_make == "BMW") {
+      germanCars.push(data[i]) 
+    }
+  }
+  return germanCars
 }
 
 /**
@@ -196,9 +214,17 @@ function getGermanCars(/* code here */) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (x, y) => {
+  return x + y
+}
+
+const addFive = (x) => {
+  return x + 5
+}
+
+const argTimesTwo = (x) => {
+  return x * 2
+}
 
 /**
  * ### Challenge `carMaker`
