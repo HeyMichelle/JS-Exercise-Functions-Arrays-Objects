@@ -86,8 +86,8 @@ function makeSmartPerson(name) {
   }
 }
 
-
-function makeSmartPerson(name) {
+// This also works 
+/* function makeSmartPerson(name) {
   let myObj = {
     name: name,
     sum: (x,y) => { return x + y},
@@ -95,7 +95,7 @@ function makeSmartPerson(name) {
   }
   
   return myObj
-}
+} */
 
 
 
@@ -111,8 +111,10 @@ function makeSmartPerson(name) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(/* code here */) {
-  /* code here */
+function getCarInfoByIndex(inven, x) {
+    for (let i = 0; i<inven.length; i++) {
+        return `This is a ${inven[i].car_make} ${inven[i].car_model}`
+    }
 }
 
 /**
@@ -126,9 +128,12 @@ function getCarInfoByIndex(/* code here */) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(arrLast) {
+  for (let i = 0; i = arrLast.length-1; i++) {
+    return `This is a ${arrLast[i].car_make} ${arrLast[i].car_model}`
+  }
 }
+
 
 /**
  * ### Challenge `getCarInfoById`
@@ -143,7 +148,7 @@ function getLastCarInfo(/* code here */) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoById(arr, id) {
-  for (let i = 0; i<arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
       if (arr[i].id === id) {
           let car = arr[i];
           return `This is a ${car.car_make} ${car.car_model}`
@@ -159,9 +164,17 @@ function getCarInfoById(arr, id) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
-  /* code here */
+function sortCarInventory(arrS) {
+  arrS.sort(function(a , b) {
+    let x = a.car_model.toLowerCase();
+    let y = b.car_model.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+  })
+  return arrS;
 }
+
 
 /**
  * ### Challenge `getModelYears`
