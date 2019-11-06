@@ -45,7 +45,7 @@ function makePersonObject(id, name, email) {
    }
 }
 
-makePersonObject(5, 'Leia', 'Leia@leia.com');
+// makePersonObject(5, 'Leia', 'Leia@leia.com');
 
 /**
  * ### Challenge `getName`
@@ -60,9 +60,10 @@ makePersonObject(5, 'Leia', 'Leia@leia.com');
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(personObject) {
+  return `Hello, my name is ${personObject.name}`
 }
+
 
 /**
  * ### Challenge `makeSmartPerson`
@@ -77,9 +78,26 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(name) {
+  return {
+    name: name,
+    sum: (x,y) => { return x + y},
+    speak: () => { return `Hello, my name is ${name}`}
+  }
 }
+
+
+function makeSmartPerson(name) {
+  let myObj = {
+    name: name,
+    sum: (x,y) => { return x + y},
+    speak: () => { return `Hello, my name is ${name}`}
+  }
+  
+  return myObj
+}
+
+
 
 /**
  * ### Challenge `getCarInfoByIndex`
