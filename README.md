@@ -12,7 +12,7 @@ If you run into trouble while coding, fight the good fight for 20 minutes and th
 
 * [Instructions](#instructions)
 * [Get Started](#get-started)
-
+  
 ## Instructions
 
 Find the file `index.js` and complete the tasks until all of your tests pass. Do not use any of the forbidden methods!
